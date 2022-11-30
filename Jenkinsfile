@@ -8,7 +8,7 @@ parameters{
         }
         stage('BUILD'){
             steps{
-                sh 'docker image build -t spc_pet:1.0'
+                sh 'docker image build -t spc_pet:1.0 .'
             }
         }
         stage('Container'){

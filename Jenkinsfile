@@ -13,7 +13,7 @@ parameters{
         }
         stage('Container'){
             steps{
-                sh "docker container run --name spring -d -P spc_pet:1.0"
+                sh "docker container run --name spring -d -p 8081:8080 spc_pet:1.0"
             }
         }
 }

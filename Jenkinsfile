@@ -1,17 +1,17 @@
 parameters{
-    agent {label 'OPENJDL-11-JDK'}
+    agent {label 'OPENJDK-11-JDK'}
     stages{
-        stage('VCS'){
+        stage('GIT'){
             steps{
-                git branch :"main" ,url:'https://github.com/mallojuashok/DockerPractice.git'
+                git branch :"main" , url:'https://github.com/mallojuashok/DockerPractice.git'
             }
         }
-        stage('BUILD'){
+        stage('IMAGE BUILD'){
             steps{
                 sh 'docker image build -t spc_pet:1.0 .'
             }
         }
-        stage('Container'){
+        stage('CONTAINER RUN'){
             steps{
                 sh 'docker container run --name spring -d -p 8081:8080 spc_pet:1.0'
             }

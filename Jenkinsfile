@@ -1,5 +1,5 @@
 parameters{
-    agent {label 'OPENJDK-11-JDK'}
+    agent {label 'DOCKER_IMAGE'}
     stages{
         stage('GIT'){
             steps{
